@@ -1,12 +1,36 @@
-Our project is a real-time collaborative document editor, similar to Google Docs, but with enhanced commenting and annotation features. It allows multiple users to create, edit, and collaborate on documents simultaneously, with a focus on seamless feedback and discussion within the document.
+# 📝 Collaborative Document Editor  
 
-Key Features:
-Real-time Editing – Multiple users can work on the same document simultaneously with live updates.
-Commenting System – Users can leave comments on specific text selections, reply to comments, and resolve discussions.
-Annotations & Highlights – Highlight text and add inline annotations for better collaboration.
-Version History – Track changes, view past versions, and restore previous drafts.
-Role-Based Permissions – Control who can edit, comment, or view the document.
-Rich Text Formatting – Support for headings, bold, italics, lists, and more.
-Cloud Storage & Sync – Documents are saved automatically and accessible from any device.
-Export & Sharing – Download documents in multiple formats (PDF, DOCX) and share them via links.
-This project is designed for teams, writers, and researchers who need a powerful yet intuitive way to collaborate on documents. 🚀
+A real-time collaborative document editor with advanced commenting and annotation features, built with **Next.js**, **Lexical**, **Liveblocks**, and **Clerk** for authentication. This project allows multiple users to create, edit, and collaborate on documents seamlessly.
+
+---
+
+## 🚀 Features  
+
+✅ **Real-time Collaboration** – Multiple users can edit documents simultaneously.  
+✅ **Commenting & Annotations** – Leave comments on specific text selections, reply, and resolve discussions.  
+✅ **Live Presence & Cursors** – See who is editing in real-time with **Liveblocks**.  
+✅ **Rich Text Editing** – Supports bold, italics, headings, lists, and more with **Lexical**.  
+✅ **Role-Based Access** – Control who can edit, comment, or view documents with **Clerk Authentication**.  
+✅ **Version History** – Track changes and restore previous versions.  
+✅ **Autosave & Cloud Sync** – Documents are saved automatically.  
+✅ **Export & Sharing** – Download documents in multiple formats and share them via links.  
+
+---
+
+## 🛠️ Tech Stack  
+
+- **Next.js 14** – Framework for SSR & API routes.  
+- **Lexical** – Lightweight, extensible rich-text editor.  
+- **Liveblocks** – Enables real-time presence, collaboration, and storage.  
+- **Clerk** – Authentication & user management.  
+- **Tailwind CSS && Shandcn** – Styling & UI.  
+
+---
+
+## 📦 Installation  
+
+First, clone the repository:
+
+```bash
+git clone https://github.com/your-username/collaborative-docs.git
+cd collaborative-docs
