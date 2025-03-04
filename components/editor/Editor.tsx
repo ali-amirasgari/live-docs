@@ -35,19 +35,19 @@ export function Editor({
   roomId: string;
   currentUserType: UserType;
 }) {
+  const initialConfig = liveblocksConfig({
+    namespace: "Editor",
+    nodes: [HeadingNode],
+    onError: (error: Error) => {
+      console.error(error);
+      throw error;
+    },
+    theme: Theme,
+    editable: currentUserType === "editor",
+  });
+
   return (
-    <LexicalComposer
-      initialConfig={liveblocksConfig({
-        namespace: "Editor",
-        nodes: [HeadingNode],
-        onError: (error: Error) => {
-          console.error(error);
-          throw error;
-        },
-        theme: Theme,
-        editable: currentUserType === "editor",
-      })}
-    >
+    <LexicalComposer initialConfig={initialConfig}>
       <div className="editor-container size-full">
         <div className="toolbar-wrapper flex min-w-full justify-between">
           <ToolbarPlugin />
@@ -55,12 +55,10 @@ export function Editor({
         </div>
 
         <div className="editor-wrapper flex flex-col items-center justify-start">
-          <Loader /> {/* ✅ نمایش لودر در هنگام لود */}
+          <Loader />
           <div className="editor-inner min-h-[1100px] relative mb-5 h-fit w-full max-w-[800px] shadow-md lg:mb-10">
             <RichTextPlugin
-              contentEditable={
-                <ContentEditable className="editor-input h-full" />
-              }
+              contentEditable={<ContentEditable className="editor-input h-full" />}
               placeholder={<Placeholder />}
               ErrorBoundary={LexicalErrorBoundary}
             />
