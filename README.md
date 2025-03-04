@@ -26,11 +26,3 @@ A real-time collaborative document editor with advanced commenting and annotatio
 - **Tailwind CSS && Shandcn** – Styling & UI.  
 
 ---
-
-## 📦 Installation  
-
-First, clone the repository:
-
-```bash
-git clone https://github.com/your-username/collaborative-docs.git
-cd collaborative-docs
