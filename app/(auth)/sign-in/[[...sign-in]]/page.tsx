@@ -1,7 +1,11 @@
-import React from "react";
+import { SignIn } from "@clerk/nextjs";
 
 function SignInPage() {
-  return <div>SignInPage</div>;
+  return (
+    <main className="auth-page">
+      <SignIn />
+    </main>
+  );
 }
 
 export default SignInPage;

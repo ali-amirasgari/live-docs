@@ -261,30 +261,34 @@ function useActiveBlock() {
   );
 
   const getSnapshot = useCallback(() => {
-    return editor.getEditorState().read(() => {
+    let result = null;
+    editor.getEditorState().read(() => {
       const selection = $getSelection();
-      if (!$isRangeSelection(selection)) return null;
-
+      if (!$isRangeSelection(selection)) return;
+  
       const anchor = selection.anchor.getNode();
       let element =
-        anchor.getKey() === 'root'
+        anchor.getKey() === "root"
           ? anchor
           : $findMatchingParent(anchor, (e) => {
               const parent = e.getParent();
               return parent !== null && $isRootOrShadowRoot(parent);
             });
-
+  
       if (element === null) {
         element = anchor.getTopLevelElementOrThrow();
       }
-
+  
       if ($isHeadingNode(element)) {
-        return element.getTag();
+        result = element.getTag();
+      } else {
+        result = element.getType();
       }
-
-      return element.getType();
     });
+  
+    return result;
   }, [editor]);
+  
 
   return useSyncExternalStore(subscribe, getSnapshot, getSnapshot);
 }
