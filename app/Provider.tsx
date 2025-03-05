@@ -19,20 +19,20 @@ const Provider = ({ children }: { children: ReactNode }) => {
       //   "pk_dev_PsJdiwpRWuZsG2Gvvzy5n1PDoK2ADoIHahpkjUQcCcne5aHhHtAwvsbDqtEvxX7t"
       // }
       authEndpoint="/api/liveblocks-auth"
-      // resolveUsers={async ({ userIds }) => {
-      //   const users = await getClerkUsers({ userIds });
+      resolveUsers={async ({ userIds }) => {
+        const users = await getClerkUsers({ userIds });
 
-      //   return users;
-      // }}
-      // resolveMentionSuggestions={async ({ text, roomId }) => {
-      //   const roomUsers = await getDocumentUsers({
-      //     roomId,
-      //     currentUser: clerkUser?.emailAddresses[0].emailAddress!,
-      //     text,
-      //   });
+        return users;
+      }}
+      resolveMentionSuggestions={async ({ text, roomId }) => {
+        const roomUsers = await getDocumentUsers({
+          roomId,
+          currentUser: clerkUser?.emailAddresses[0].emailAddress!,
+          text,
+        });
 
-      //   return roomUsers;
-      // }}
+        return roomUsers;
+      }}
     >
       <RoomProvider id="my-room">
         <ClientSideSuspense fallback={<Loader />}>
